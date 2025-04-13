@@ -9,15 +9,13 @@ import BlogDetailScreen from './BlogDetailScreen';
 import BlogPostForm from '@/components/blog/BlogPostForm';
 import { Blog } from '@/redux/blogSlice';
 
-export default function EditScreen() {
+export default function EditScreen({route, navigation}:any) {
 
-  const route = useRoute<RouteProp<RootStackParamList, 'BlogDetailScreen'>>();
   const { blogId } = route.params; // Access the blogId parameter
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
   const blogList = useSelector((state: RootState) => state.blog.blogList);
 
   const blog  = blogList.find((item) => item.id === blogId);
-
 
 
 

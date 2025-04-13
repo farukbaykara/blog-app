@@ -2,8 +2,10 @@ type RootStackParamList = {
     NonTabScreen: undefined;
     explore: undefined;
     CreateScreen: undefined;
-    BlogDetailScreen: { blogId: string };
     EditScreen: { blogId: string };
+    BlogDetailScreen: { blogId: string };
+
+    index: undefined;
 };
 
 export default RootStackParamList;

@@ -5,12 +5,12 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
 import RootStackParamList from '@/types/RootStackParamList';
-import { Card, Title, Paragraph, IconButton } from 'react-native-paper';
+import { Card, Title, Paragraph, IconButton, Props } from 'react-native-paper';
 
-export default function BlogDetailScreen() {
-  const route = useRoute<RouteProp<RootStackParamList, 'BlogDetailScreen'>>();
+export default function BlogDetailScreen({route, navigation}: any) {
+  //const route = useRoute<RouteProp<RootStackParamList, 'BlogDetailScreen'>>();
   const { blogId } = route.params; // Access the blogId parameter
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  //const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const blogList = useSelector((state: RootState) => state.blog.blogList);
 
   const blog = blogList.find((item) => item.id === blogId);
